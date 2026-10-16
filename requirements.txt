@@ -1,0 +1,29 @@
+# YoungNAKO ML hands-on: everything needed to run notebooks 1-4 locally (Python 3.10-3.12).
+# On Colab nothing has to be installed by hand: each notebook's setup cell installs what it needs.
+
+# core (all notebooks)
+numpy
+pandas
+matplotlib
+scipy
+scikit-learn
+torch
+pillow
+pydicom
+SimpleITK
+
+# notebook kernel (Jupyter / VS Code)
+ipykernel
+
+# NB1: tabular foundation model
+tabpfn
+
+# NB2 + NB4: segmentation, embeddings, CLIP
+transformers
+TotalSegmentator
+open_clip_torch
+umap-learn
+
+# NB4 only
+nnunetv2
+statsmodels
