@@ -12,7 +12,7 @@
 `solutions/` contains the filled-in versions of notebooks 1–3. Exercise versions have `___` blanks marked **✏️ TODO**.
 
 ## Data
-CHAOS challenge, MR training set (20 cases, T1-DUAL in-/opposed-phase + liver/kidney/spleen masks), downloaded automatically from Zenodo record 3431873 (≈ 0.9 GB, only the MR part is unpacked). Licence CC BY-NC-SA 4.0. Cite: Kavur et al., *Med Image Anal* 69:101950 (2021). Nothing has to be hosted or shared by us.
+CHAOS challenge, MR training set (20 cases, T1-DUAL in-/opposed-phase + liver/kidney/spleen masks), downloaded automatically from Zenodo record 3431873 (only the MR T1-DUAL files, ≈ 65 MB, are fetched out of the 0.9 GB zip via HTTP range requests; falls back to the full zip if that fails). Licence CC BY-NC-SA 4.0. Cite: Kavur et al., *Med Image Anal* 69:101950 (2021). Nothing has to be hosted or shared by us.
 
 ## Distribution
 Put the notebooks in a public GitHub repo (or Google Drive) and give participants "Open in Colab" links:
@@ -36,7 +36,7 @@ The notebook logic was executed end-to-end offline on synthetic CHAOS-like data;
    - NB1 TabPFN v2 (`ModelVersion.V2`, no PriorLabs login needed).
    - NB3 shortcut part: the "new hospital" AUC should drop clearly; if not, reduce `epochs` of `m_hans` further.
 2. Free Colab GPUs are not guaranteed for 40 parallel users: everything also runs on CPU (slower; NB2 uses `fast=True` and fewer cases on CPU).
-3. Optional: pre-run the first cell during the break so the 0.9 GB download is cached.
+3. Optional: pre-run the data cell during the break. Re-running it is safe: complete data is reused, an interrupted download is deleted and fetched again (`download_chaos(force=True)` forces a fresh copy).
 
 ## Own NAKO data
 Notebook 4, Part D runs locally (set `DEMO_MODE = False`, `NAKO_ROOT`, `PATTERNS`). Do not upload NAKO data to Colab.
